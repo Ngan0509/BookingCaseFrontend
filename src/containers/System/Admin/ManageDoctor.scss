@@ -1,0 +1,35 @@
+.manage_doctor-container {
+    max-width: 1170px;
+    width: 100%;
+    margin: 30px auto;
+
+    h2 {
+        margin-bottom: 20px;
+    }
+    .manage_doctor-inputs {
+        margin: 30px 0;
+
+        .row {
+            --bs-gutter-x: 5.5rem !important;
+            margin-bottom: 30px;
+        }
+
+        label {
+            margin-bottom: 16px;
+            font-size: 18px;
+            font-weight: 600px;
+        }
+    }
+    .manage_doctor-markdown {
+
+    }
+
+    .saveInfo_btn {
+        padding: 8px 16px;
+        border-radius: 4px;
+        font-size: 16px;
+        margin: 16px auto;
+        display: block;
+    }
+}
+    

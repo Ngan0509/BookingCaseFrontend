@@ -1,0 +1,76 @@
+.detailDoctor_schedule-container {
+    .select-days {
+        display: inline-block;
+        border-bottom: 1px solid #333;
+        select {
+            outline: none;
+            border: none;
+            color: #337ab7;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: capitalize;
+        }
+    }
+
+    .detailDoctor_schedule-title {
+        font-size: 13px;
+        text-transform: uppercase;
+        margin: 12px 0;
+        font-weight: 600;
+        
+        span {
+            font-size: 18px;
+            margin-right: 4px;
+            i {
+                position: relative;
+                top: 2px;
+            }
+        }
+    }
+
+    .select-times {
+        display: flex;
+        .scheduleTimes {
+            width: 60%;
+
+            .scheduleTimes_btn {
+                p {
+                    font-style: italic;
+                }
+            }
+            .btn-times {
+                background-color: #fff8ae;
+                padding: 8px 15px;
+                min-width: 22%;
+                font-size: 12px;
+                font-weight: 600;
+                border: none;
+                outline: none;
+                margin: 4px;
+                transition: 0.3s;
+                border-radius: 3px;
+            }
+
+            .btn-times:hover {
+                background-color: #45c3d2;
+                color: #fff;
+            }
+
+            .note {
+                font-size: 12px;
+                margin-top: 16px;
+                color: #999;
+
+                span {
+                    color: #333;
+                }
+            }
+        }
+        .addressInfoDoctor {
+            width: 40%;
+            border-left: 1px solid #ccc;
+        }
+    }
+
+}

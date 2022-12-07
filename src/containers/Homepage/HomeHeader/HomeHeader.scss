@@ -1,0 +1,267 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+#HomeHeader {
+    width: 100%;
+
+    .header_fixed {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: #fff;
+        z-index: 999;
+
+        .header_container {
+            height: 80px;
+            padding: 16px 0;
+            width: 100%;
+            max-width: 1170px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .header_menu {
+                padding: 4px;
+
+                .icon-menu {
+                    font-size: 30px;
+                    cursor: pointer;
+                    color: #333;
+                }
+            }
+
+            .header_logo {
+
+                .header_logo-img {
+                    background: url(../../../assets/HompageImages/logoHomepage.svg) center center no-repeat;
+                    width: 160px;
+                    height: 40px;
+                }
+            }
+
+            .header_navbar {
+                display: flex;
+                align-items: center;
+                flex: 0.8;
+
+                .header_navbar-item {
+                    margin-right: 30px;
+
+                    a {
+                        text-decoration: none;
+                        color: #333;
+                        letter-spacing: 0.4px;
+
+                        h5 {
+                            font-size: 13px;
+                            font-weight: bold;
+                            margin-bottom: 4px;
+                        }
+
+                        p {
+                            font-size: 11px;
+                            color: #999;
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+
+            .header_support {
+                a {
+                    text-decoration: none;
+
+                    .icon-question {
+                        display: inline-block;
+                        height: 15px;
+                        width: 15px;
+                        line-height: 18px;
+                        text-align: center;
+                        background-color: #45c3d2;
+                        color: #fff;
+                        font-size: 12px;
+                        border-radius: 50%;
+                    }
+
+                    .text {
+                        color: #999;
+                        font-weight: 600;
+                        font-size: 16px;
+                    }
+
+                }
+            }
+
+            .header_languages {
+                span {
+                    color: #333;
+                    padding: 4px;
+                    margin: 0 4px;
+                    cursor: pointer;
+                    font-size: 16px;
+                    font-weight: 600;
+                    opacity: 1;
+                }
+
+                span:hover:not(.active) {
+                    opacity: 0.2;
+                    color: red;
+                }
+
+                .active {
+                    color: red;
+                }
+            }
+        }
+    }
+
+
+    .banner_container {
+        background: url(../../../assets/HompageImages/bookingcareHomeBg4.jpg) center center no-repeat;
+        background-size: cover;
+        height: 560px;
+        margin-top: 80px;
+
+        .banner_container-bg {
+            height: 100%;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.1));
+
+            .banner_content {
+                width: 85%;
+                max-width: 1170px;
+                margin: 0 auto;
+                text-align: center;
+                padding: 50px 0 70px;
+
+                .banner_title {
+                    text-transform: uppercase;
+                    text-shadow: 1px 1px 1px #333;
+                    color: #fff;
+
+                    h3 {
+                        font-size: 32px;
+                        margin-bottom: 16px;
+                    }
+
+                    h2 {
+                        font-size: 34px;
+                        font-weight: 600;
+                        margin-bottom: 25px;
+                    }
+                }
+
+                .banner_input-wrap {
+                    .banner_input-search {
+                        background-color: #f7d800;
+                        min-width: 300px;
+                        max-width: 40%;
+                        margin: 0 auto;
+                        padding: 10px 16px;
+                        border-radius: 25px;
+                        text-align: initial;
+
+                        .icon-search {
+                            font-size: 22px;
+                            margin-right: 16px;
+                            cursor: pointer;
+                            padding: 4px;
+                            position: relative;
+                            top: 3px;
+                        }
+
+                        input {
+                            border: none;
+                            outline: none;
+                            background-color: #f7d800;
+                            font-size: 14px;
+                            letter-spacing: 1px;
+                            width: 60%;
+                        }
+                    }
+                }
+
+                .banner_app-download {
+                    margin-top: 60px;
+
+                    .googlePlay {
+                        background: url(../../../assets/HompageImages/google-play.svg) center center no-repeat;
+                        background-size: cover;
+                        display: inline-block;
+                        width: 108px;
+                        height: 32px;
+                        border-radius: 5px;
+                        margin: 0 12px;
+                    }
+
+                    .appStore {
+                        background: url(../../../assets/HompageImages/app-store.svg) center center no-repeat;
+                        background-size: cover;
+                        display: inline-block;
+                        width: 108px;
+                        height: 32px;
+                        border-radius: 5px;
+                        margin: 0 12px;
+                    }
+                }
+            }
+
+            .banner_service-bg {
+                padding: 30px 0 40px;
+                background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 1));
+
+                .banner_service {
+                    width: 90%;
+                    max-width: 1170px;
+                    margin: 0 auto;
+
+                    .banner_list {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        list-style: none;
+                        margin-bottom: 0;
+                        padding-left: 0;
+
+                        .banner_list-item {
+                            // width: 8.3333%;
+
+                            a {
+                                text-align: center;
+                                text-decoration: none;
+
+                                .icon_service {
+                                    display: block;
+                                    width: 50px;
+                                    height: 50px;
+                                    line-height: 50px;
+                                    margin: 0 auto;
+                                    background-color: #fff;
+                                    border-radius: 50%;
+
+                                    img {
+                                        width: 60%;
+                                        height: 60%;
+                                        object-fit: contain;
+                                        object-position: center;
+                                    }
+                                }
+
+                                .title_service {
+                                    margin-top: 16px;
+                                    color: #333;
+                                    font-size: 18px;
+                                    font-weight: 500;
+                                    letter-spacing: 1px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

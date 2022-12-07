@@ -1,0 +1,51 @@
+.manage_schedule-container {
+    max-width: 1170px;
+    width: 100%;
+    margin: 30px auto;
+
+    h2 {
+        margin-bottom: 20px;
+    }
+    .manage_schedule-inputs {
+        margin: 30px 0;
+
+        .row {
+            --bs-gutter-x: 5.5rem !important;
+
+            label {
+                margin-bottom: 16px;
+                font-size: 18px;
+                font-weight: 600px;
+                display: block;
+            }
+
+            .pick-times {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: space-between;
+                margin: 60px 0;
+
+                .btn-time {
+                    padding: 8px 16px;
+                    color: #333;
+                    background-color: none;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    &.active {
+                        background-color: pink;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .saveInfo_btn {
+        padding: 8px 16px;
+        border-radius: 4px;
+        font-size: 16px;
+        margin: 16px auto;
+        display: block;
+    }
+}

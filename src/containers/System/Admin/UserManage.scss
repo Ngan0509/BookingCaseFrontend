@@ -1,0 +1,106 @@
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td,
+#customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#customers tr:hover {
+  background-color: #ddd;
+}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #0071ba;
+  color: white;
+}
+
+.user-container {
+
+  .btn-edit,
+  .btn-delete {
+    border: none;
+    outline: none;
+    padding: 2px 4px;
+    margin-right: 20px;
+    background: none;
+    font-size: 20px;
+  }
+
+  .btn-edit {
+    color: yellow;
+  }
+
+  .btn-delete {
+    color: red;
+  }
+
+  .add-user-btn {
+    padding: 4px 8px;
+    display: inline-block;
+    border-radius: 5px;
+    margin-left: 16px;
+    cursor: pointer;
+  }
+}
+
+.modal_user-container {
+  .modal-content {
+    .modal-header {
+      button {
+        background: none;
+        border: none;
+        outline: none;
+        font-size: 24px;
+        color: #fff;
+        padding: 0 8px;
+      }
+    }
+  }
+
+  .container-row {
+    padding: 0 0 30px;
+
+    .form-row {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin-top: 30px;
+
+      .form-group {
+        flex: 1;
+
+        .form-control {
+          appearance: auto !important;
+          -webkit-appearance: auto !important;
+        }
+      }
+
+      .md-6_user {
+        width: 50%;
+      }
+
+      .md-3_user {
+        width: 33.333%;
+      }
+    }
+  }
+
+  .btn-user {
+    height: auto;
+    padding: 4px 12px;
+    font-size: 16px;
+    margin-right: 20px;
+  }
+}

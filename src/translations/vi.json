@@ -1,29 +1,58 @@
 {
-    "common": {
-        "add": "Thêm",
-        "edit": "Sửa",
-        "delete": "Xóa",
-        "decentralize": "Phân quyền",
-        "close": "Đóng",
-        "save": "Lưu",
-        "refresh": "Refresh",
-        "accept": "Chấp nhận",
-        "confirm": "Xác nhận",
-        "confirm-this-task": "Bạn có chắc chắn thực hiện tác vụ này?",
-        "fail-to-load-data": "Không thể tải về dữ liệu",
-        "unknown-error": "Có lỗi xảy ra",
-        "internal-server-error": "Lỗi kết nối",
-        "bad-request": "Yêu cầu không hợp lệ",
-        "forbiden-request": "Thông tin truyền vào không hợp lệ",
-        "fail-to-load-all-code": "Không thể tải về dữ liệu allcode",
-        "sum": "Tổng",
-        "date-range-invalid": "Khoảng thời gian không hợp lệ"
+    "home-header": {
+        "speciality": "Chuyên Khoa",
+        "search-doctor": "Tìm bác sĩ theo chuyên khoa",
+        "health-facility": "Cơ sở y tế",
+        "select-room-hospital": "Chọn bệnh viện phòng khám",
+        "doctor": "Bác sĩ",
+        "select-doctor": "Chọn bác sĩ giỏi",
+        "examination-package": "Gói khám",
+        "general-health-examination": "Khám sức khỏe tổng quát",
+        "support": "Hỗ trợ",
+        "medical-background": "Nền Tảng Y Tế",
+        "health-care": "Chăm Sóc Sức Khỏe Toàn Diện",
+        "specialist-examination": "Khám Chuyên Khoa",
+        "remote-examination": "Khám Từ Xa",
+        "general-examination": "Khám Tổng Quát",
+        "medical-test": "Xét Nghiệm Y Học",
+        "mental-health": "Sức Khỏe Tinh Thần",
+        "dental-examination": "Khám Nha Khoa",
+        "surgery-package": "Gói Phẫu Thuật",
+        "medical-products": "Sản Phẩm Y Tế",
+        "welcome": "Xin chào"
     },
-    "login": {
-        "login": "Đăng nhập",
-        "username": "Tên đăng nhập",
-        "password": "Mật khẩu",
-        "userpass-wrong": "Sai tên đăng nhập hoặc mật khẩu!"
+    "home-footer": {
+        "ft-company-name": "Công ty Cổ phần Công nghệ BookingCare",
+        "ft-list1": "Liên hệ hợp tác",
+        "ft-list2": "Câu hỏi thường gặp",
+        "ft-list3": "Điều khoản sử dụng",
+        "ft-list4": "Chính sách Bảo mật",
+        "ft-list5": "Quy trình hỗ trợ giải quyết khiếu nại",
+        "ft-list6": "Quy chế hoạt động",
+        "ft-app-download": "Tải ứng dụng BookingCare cho điện thoại hoặc máy tính bảng:"
+    },
+    "section": {
+        "medical-facility": "Cơ sở y tế nổi bật",
+        "outstanding-doctor": "Bác sĩ nổi bật tuần qua",
+        "popular-specialties": "Chuyên khoa phổ biến",
+        "hand-book": "Cẩm Nang",
+        "see-more": "Xem thêm",
+        "all-posts": "Tất cả bài viết",
+        "media-talk": "Truyền thông nói về BookingCare",
+        "patient": {
+            "schedule": "Lịch khám",
+            "no-schedule": "Bác sĩ không có lịch trong thời gian này, vui lòng chọn khác thời gian",
+            "select": "Chọn",
+            "book-fee": "và đặt (Phí đặt lịch 0đ)",
+            "clinic-address": "Địa chỉ khám",
+            "price-title": "Giá khám",
+            "see-more": ". Xem chi tiết",
+            "hide-price": "Ẩn bảng giá",
+            "payment-method": "Người bệnh có thể thanh toán bằng hình thức",
+            "set-schedule": "Đặt lịch khám",
+            "scheFree": "Miễn phí đặt lịch",
+            "book-appointment": "Thông tin đặt lịch khám bệnh"
+        }
     },
     "menu": {
         "system": {
@@ -31,90 +60,64 @@
             "system-administrator": {
                 "header": "Quản trị hệ thống",
                 "user-manage": "Quản lý người sử dụng",
-                "product-manage": "Quản lý gói",
+                "user-redux": "Quản lý redux",
                 "register-package-group-or-account": "Đăng ký gói dịch vụ cho nhóm/tài khoản"
             },
             "system-parameter": {
                 "header": "Tham số hệ thống"
             }
+        },
+        "admin": {
+            "user": "Người dùng",
+            "manage-doctor": "Quản lý bác sĩ",
+            "manage-admin": "Quản lý admin",
+            "crud-user": "CRUD user",
+            "crud-redux": "CRUD redux",
+            "clinic": "Phòng khám",
+            "manage-clinic": "Quản lý phòng khám",
+            "specialty": "Chuyên khoa",
+            "manage-specialty": "Quản lý chuyên khoa",
+            "handbook": "Cẩm nang",
+            "manage-handbook": "Quản lý cẩm nang",
+            "manageDoctor": {
+                "more-info-doctor": "Tạo thêm thông tin bác sĩ",
+                "select-doctor": "Chọn bác sĩ",
+                "intro-doctor": "Giới thiệu bác sĩ",
+                "select-price": "Giá khám bệnh",
+                "select-payment": "Phương thức thanh toán",
+                "select-province": "Tỉnh/thành",
+                "nameClinic": "Tên phòng khám",
+                "addressClinic": "Địa chỉ phòng khám",
+                "note": "Ghi chú",
+                "select-specialty": "Chọn chuyên khoa",
+                "select-clinic": "Chọn phòng khám"
+            }
+        },
+        "doctor": {
+            "manage-schedule": "Quản lý lịch khám bệnh",
+            "manage-patient": "Quản lý bệnh nhân",
+            "schedule-doctor": "Lịch khám của bác sĩ",
+            "patient-doctor": "Bệnh nhân của bác sĩ",
+            "choose-date": "Chọn ngày",
+            "send-bill": "Gửi hóa đơn đặt lịch khám bệnh"
         }
     },
-    "system": {
-        "user-manage": {
-            "fail-to-load-fouser": "Không thể tải về danh sách người dùng",
-            "user-id": "Mã người sử dụng",
-            "usertype": "Loại người dùng",
-            "username": "Tên người dùng",
-            "fullname": "Tên đầy đủ",
-            "mobile": "Số điện thoại",
-            "email": "Email",
-            "status": "Trạng thái",
-            "add-user": "Thêm người dùng",
-            "edit-user": "Sửa thông tin người dùng",
-            "password": "Mật khẩu",
-            "retype-password": "Nhập lại mật khẩu",
-            "add-user-success": "Thêm người dùng thành công",
-            "edit-user-success": "Thay đổi thông tin người dùng thành công",
-            "add-user-fail": "Thêm người dùng thất bại",
-            "edit-user-fail": "Thay đổi thông tin người dùng thất bại",
-            "del-user-success": "Xóa người dùng thành công",
-            "del-user-fail": "Xóa người dùng thất bại",
-            "invalid-input": {
-                "username": "Quý khách vui lòng nhập tên người dùng",
-                "fullname": "Quý khách vui lòng nhập tên đầy đủ",
-                "password": "Quý khách vui lòng nhập mật khẩu"
-            },
-            "sure-delete-user": "Bạn có chắc chắn muốn xóa người dùng này?"
-        },
-        "product-manage": {
-            "fail-to-load-foprtype": "Không thể tải về danh sách gói",
-            "prid": "Mã gói",
-            "prname": "Tên gói",
-            "prtype": "Loại gói",
-            "status": "Trạng thái",
-            "description": "Diễn giải",
-            "effective-date": "Ngày hiệu lực",
-            "expiration-date": "Ngày hết hiệu lực",
-            "add-product": "Thêm gói",
-            "add-product-success": "Thêm gói thành công",
-            "add-product-fail": "Thêm gói thất bại",
-            "edit-product": "Sửa thông tin gói",
-            "package-decentralize": "Phân quyền chức năng",
-            "edit-product-success": "Thay đổi thông tin gói thành công",
-            "edit-product-fail": "Thay đổi thông tin gói thất bại",
-            "delete-product-success": "Xóa gói thành công",
-            "delete-product-fail": "Xóa gói thất bại",
-            "invalid-input": {
-                "prid": "Quý khách vui lòng nhập mã gói",
-                "prname": "Quý khách vui lòng nhập tên gói"
-            },
-            "fail-to-load-decentralize-info": "Không thể tải về thông tin phân quyền chức năng",
-            "save-decentralize-success": "Lưu phân quyền chức năng thành công",
-            "save-decentralize-fail": "Lưu phân quyền chức năng thất bại",
-            "sure-delete-package": "Bạn có chắc chắn muốn xóa gói này?"
-        },
-        "register-package-group-or-acc": {
-            "assign-service-package-to-customer": "Gán gói dịch vụ cho khách hàng",
-            "package-name": "Tên gói",
-            "assign-type": "Loại gán",
-            "cust-acc-group": "Nhóm KH/Tài khoản",
-            "effective-date": "Ngày hiệu lực",
-            "expiration-date": "Ngày hết hiệu lực",
-            "assign": "Gán",
-            "manage-assign-groups": "Quản lý gán nhóm",
-            "group-cust-acc-name": "Tên nhóm/tài khoản KH",
-            "del-assign": "Xóa gán",
-            "fail-to-load-manage-assign-groups-list": "Không thể tải về thông tin quản lý gán nhóm",
-            "invalid-selected": {
-                "currentfoProduct": "Gói đang chọn không hợp lệ",
-                "currentAssignType": "Loại gán không hợp lệ",
-                "currentFoUser": "Nhóm KH/Tài khoản không hợp lệ"
-            },
-            "assign-service-package-to-customer-success": "Gán gói dịch vụ cho khách hàng thành công",
-            "assign-service-package-to-customer-fail": "Gán gói dịch vụ cho khách hàng thất bại",
-            "remove-assign-success": "Bỏ gán gói dịch vụ cho khách hàng thành công",
-            "remove-assign-fail": "Bỏ gán gói dịch vụ cho khách hàng thất bại",
-            "sure-delete-assign": "Bạn có chắc chắn muốn bỏ gán gói dịch vụ cho khách hàng?"
-        }
+    "manage-user": {
+        "add-new-user": "Thêm người dùng mới",
+        "email": "Email",
+        "password": "Mật khẩu",
+        "firstname": "Tên",
+        "lastname": "Họ",
+        "fullname": "Họ tên",
+        "address": "Địa chỉ",
+        "phoneNumber": "Số điện thoại",
+        "sex": "Giới tính",
+        "role": "Vai trò",
+        "position": "Chức vụ",
+        "image": "Ảnh",
+        "reason": "Lý do",
+        "birthday": "Ngày sinh",
+        "time": "Thời gian",
+        "actions": "Thao tác"
     }
 }
