@@ -1,9 +1,6 @@
 import React from "react"
 import * as actions from "../../../store/actions";
 import { connect } from 'react-redux';
-import { FormattedMessage } from 'react-intl';
-import * as userService from "../../../services/userService"
-import { toast } from "react-toastify";
 import MarkdownIt from 'markdown-it';
 import MdEditor from 'react-markdown-editor-lite';
 // import style manually
@@ -17,7 +14,7 @@ const mdParser = new MarkdownIt(/* Markdown-it options */);
 
 // Finish!
 function handleEditorChange({ html, text }) {
-  console.log('handleEditorChange', html, text);
+    console.log('handleEditorChange', html, text);
 }
 
 class UserTable extends React.Component {
@@ -28,10 +25,16 @@ class UserTable extends React.Component {
         }
     }
 
+    componentWillUnmount() {
+        this.setState({
+            arrUsers: []
+        })
+    }
+
     async componentDidMount() {
         this.props.fetchAllUserStart()
-        let resp = await userService.getAllUser("All")
-        toast.success(resp.errMessage)
+        // let resp = await userService.getAllUser("All")
+        // toast.success(resp.errMessage)
     }
 
     componentDidUpdate(preProps) {
@@ -88,7 +91,7 @@ class UserTable extends React.Component {
 
                         </tbody>
                     </table>
-                    <MdEditor style={{ height: '500px' }} renderHTML={text => mdParser.render(text)} onChange={handleEditorChange} />     
+                    <MdEditor style={{ height: '500px' }} renderHTML={text => mdParser.render(text)} onChange={handleEditorChange} />
                 </div>
             </>
         )

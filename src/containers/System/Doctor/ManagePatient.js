@@ -22,6 +22,16 @@ class ManagePatient extends Component {
         }
     }
 
+    componentWillUnmount() {
+        this.setState({
+            currentDate: moment(new Date()).startOf('day').valueOf(),
+            patientDataBooking: [],
+            isOpenRemedyModal: false,
+            dataPatientForRemedy: {},
+            isShowLoading: false
+        })
+    }
+
     async componentDidMount() {
         this.getpatientDataBooking()
     }
@@ -29,7 +39,7 @@ class ManagePatient extends Component {
     getpatientDataBooking = async () => {
         let doctorId = this.props.user.id
         let formatDate = new Date(this.state.currentDate).getTime()
-        let resp = await userService.getListPatientForDoctor(doctorId, 1656608400000)
+        let resp = await userService.getListPatientForDoctor(doctorId, formatDate)
         console.log(resp)
         if (resp && resp.errCode === 0) {
             this.setState({

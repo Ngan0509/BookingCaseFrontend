@@ -329,7 +329,7 @@ class BookingModal extends Component {
                                 <div className='row'>
                                     <div className='col'>
                                         <div className='form-group'>
-                                            <span><i class='bx bxs-plus-circle'></i></span>
+                                            <span><i className='bx bxs-plus-circle'></i></span>
                                             <FormattedMessage id="manage-user.reason">
                                                 {
                                                     placeholder =>
@@ -351,7 +351,7 @@ class BookingModal extends Component {
                                 <div className='row'>
                                     <div className='col'>
                                         <div className='form-group'>
-                                            <span><i class='bx bxs-comment-dots'></i></span>
+                                            <span><i className='bx bxs-comment-dots'></i></span>
                                             <FormattedMessage id="manage-user.birthday">
                                                 {
                                                     placeholder =>
@@ -388,7 +388,7 @@ class BookingModal extends Component {
 
                                     <div className='col'>
                                         <div className='form-group'>
-                                            <span><i class='bx bx-male-female'></i></span>
+                                            <span><i className='bx bx-male-female'></i></span>
                                             <Select
                                                 value={gender}
                                                 onChange={this.handleChangeSelect}

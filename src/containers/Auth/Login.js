@@ -18,6 +18,15 @@ class Login extends Component {
         }
     }
 
+    componentWillUnmount() {
+        this.setState({
+            email: '',
+            password: '',
+            isShowPass: false,
+            errMessage: ''
+        })
+    }
+
     onEmailChange = (e) => {
         this.setState({ email: e.target.value })
     }
@@ -54,7 +63,7 @@ class Login extends Component {
     }
 
     handleOnkeyDownLogin = (e) => {
-        if(e.keyCode === 13) {
+        if (e.keyCode === 13) {
             this.handleLogin()
         }
     }
@@ -121,18 +130,18 @@ class Login extends Component {
 
                         </div>
                         <div className='col-12 form-forgot-password'>
-                            <a href=''>Forgot your password?</a>
+                            <a href='/'>Forgot your password?</a>
                         </div>
                         <div className='col-12 form-sign-width'>
                             <p>Or side in with: </p>
                             <div className='social-media'>
-                                <a href='' className='facebook'>
+                                <a href='/' className='facebook'>
                                     <i className='bx bxl-facebook'></i>
                                 </a>
-                                <a href='' className='twitter'>
+                                <a href='/' className='twitter'>
                                     <i className='bx bxl-twitter' ></i>
                                 </a>
-                                <a href='' className='google'>
+                                <a href='/' className='google'>
                                     <i className='bx bxl-google'></i>
                                 </a>
                             </div>

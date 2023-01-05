@@ -14,11 +14,7 @@ const createNewUserService = (data) => {
 }
 
 const deleteUserService = (userId) => {
-    return axios.delete('/api/delete-user', {
-        data: {
-            id: userId
-        }
-    })
+    return axios.delete(`/api/delete-user?id=${userId}`)
 }
 
 const updateUserService = (editData) => {
@@ -51,6 +47,10 @@ const saveScheduleDoctorService = (data) => {
 
 const getScheduleByDateService = (doctorId, date) => {
     return axios.get(`/api/get-schedule-by-date?doctorId=${doctorId}&date=${date}`)
+}
+
+const deleteDateOldService = () => {
+    return axios.delete('/api/delete-date-old')
 }
 
 const getAddressInfoDoctorService = (inputId) => {
@@ -114,7 +114,7 @@ export {
 
     getAllCodeService, getTopDoctorService, getAllDoctorsService, saveInfoDoctorService,
 
-    getDetailInfoDoctor, saveScheduleDoctorService, getScheduleByDateService, getAddressInfoDoctorService,
+    getDetailInfoDoctor, saveScheduleDoctorService, getScheduleByDateService, deleteDateOldService, getAddressInfoDoctorService,
 
     getProfileDoctorService, saveBookingOfPatientService, postBookingAppointment, saveInfoSpecialtyService,
 

@@ -3,6 +3,7 @@ import './ArrowButtons.scss'
 
 export function SampleNextArrow(props) {
     const { onClick, slideCount, currentSlide, slidesToShow } = props;
+
     return (
         <button
             className={slideCount - currentSlide === slidesToShow ? "section-next disabled" : "section-next"}

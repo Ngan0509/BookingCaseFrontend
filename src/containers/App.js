@@ -20,7 +20,6 @@ import Doctor from '../routes/Doctor';
 import Homepage from './Homepage/Homepage';
 import DetailDoctor from './Homepage/Patient/Doctor/DetailDoctor'
 
-import { CustomToastCloseButton } from '../components/CustomToast';
 import CustomScrollbars from '../components/CustomScrollbars';
 import DetailSpecialty from './Homepage/Patient/Specialty/DetailSpecialty';
 import DetailClinic from './Homepage/Patient/Clinic/DetailClinic';

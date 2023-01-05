@@ -16,7 +16,7 @@ class UserRedux extends Component {
             genderArr: [],
             positionArr: [],
             roleArr: [],
-            previewImgUrl: '',
+            // previewImgUrl: '',
             isShow: false,
             isEdit: false,
 
@@ -38,6 +38,29 @@ class UserRedux extends Component {
         this.setState((prevstate) => ({
             isShow: !prevstate.isShow
         }))
+    }
+
+    componentWillUnmount() {
+        this.setState({
+            genderArr: [],
+            positionArr: [],
+            roleArr: [],
+            // previewImgUrl: '',
+            isShow: false,
+            isEdit: false,
+
+            idEdit: '',
+            email: '',
+            password: '',
+            firstName: '',
+            lastName: '',
+            address: '',
+            phoneNumber: '',
+            gender: '',
+            role: '',
+            position: '',
+            avatar: ''
+        })
     }
 
     componentDidMount() {
@@ -75,7 +98,7 @@ class UserRedux extends Component {
             this.setState({
                 isShow: false,
                 isEdit: false,
-                previewImgUrl: '',
+                // previewImgUrl: '',
 
                 idEdit: '',
                 avatar: '',
@@ -98,9 +121,8 @@ class UserRedux extends Component {
         if (file) {
             let base64 = await CommonUtils.getBase64(file)
             console.log("fsf", base64)
-            let objectUrl = URL.createObjectURL(file)
             this.setState({
-                previewImgUrl: base64,
+                // previewImgUrl: base64,
                 avatar: base64
             })
         }
@@ -166,7 +188,7 @@ class UserRedux extends Component {
 
     handleEditUserfromParent = (user) => {
         let imageBase64 = ''
-        if(user.image) {
+        if (user.image) {
             imageBase64 = new Buffer(user.image, 'base64').toString('binary')
         }
         this.setState({
@@ -183,13 +205,13 @@ class UserRedux extends Component {
             gender: user.gender,
             role: user.roleId,
             position: user.positionId,
-            previewImgUrl: imageBase64,
+            // previewImgUrl: imageBase64,
             avatar: imageBase64
         })
     }
 
     render() {
-        const { genderArr, positionArr, roleArr, previewImgUrl, isShow, isEdit } = this.state
+        const { genderArr, positionArr, roleArr, isShow, isEdit } = this.state
         const { email, password, firstName,
             lastName, address, phoneNumber,
             gender, role, position, avatar } = this.state
@@ -199,14 +221,14 @@ class UserRedux extends Component {
             <>
                 <div className="title">Manage User Redux with Lê Ngân</div>
                 <div className='redux_body'>
-                    <div 
-                        onClick={this.handleToggleShowForm} 
+                    <div
+                        onClick={this.handleToggleShowForm}
                         className={isEdit ? 'add-toggle-btn btn-warning' : 'add-toggle-btn btn-primary'}
                     >
                         {
-                            isShow ? 
-                            `${isEdit ? "Hide Edit Form" : "Hide Create Form"}`:
-                            `${isEdit ? "Show Edit Form" : "Show Create Form"}`
+                            isShow ?
+                                `${isEdit ? "Hide Edit Form" : "Hide Create Form"}` :
+                                `${isEdit ? "Show Edit Form" : "Show Create Form"}`
                         }
                     </div>
                     {
@@ -218,26 +240,26 @@ class UserRedux extends Component {
                                         <label htmlFor='email'>
                                             <FormattedMessage id="manage-user.email" />
                                         </label>
-                                        <input 
-                                            disabled={isEdit ? true : false} 
-                                            value={email} 
-                                            onChange={(e) => this.handleChangeUserForm(e, "email")} 
-                                            type="email" 
-                                            className="form-control" 
-                                            id="email" 
+                                        <input
+                                            disabled={isEdit ? true : false}
+                                            value={email}
+                                            onChange={(e) => this.handleChangeUserForm(e, "email")}
+                                            type="email"
+                                            className="form-control"
+                                            id="email"
                                             name="email" />
                                     </div>
                                     <div className="col">
                                         <label htmlFor='password'>
                                             <FormattedMessage id="manage-user.password" />
                                         </label>
-                                        <input 
-                                            disabled={isEdit ? true : false} 
-                                            value={password} 
-                                            onChange={(e) => this.handleChangeUserForm(e, "password")} 
-                                            type="password" 
-                                            className="form-control" 
-                                            id='password' 
+                                        <input
+                                            disabled={isEdit ? true : false}
+                                            value={password}
+                                            onChange={(e) => this.handleChangeUserForm(e, "password")}
+                                            type="password"
+                                            className="form-control"
+                                            id='password'
                                             name="password" />
                                     </div>
                                 </div>
@@ -247,23 +269,23 @@ class UserRedux extends Component {
                                         <label htmlFor='firstName'>
                                             <FormattedMessage id="manage-user.firstname" />
                                         </label>
-                                        <input 
-                                            value={firstName} 
-                                            onChange={(e) => this.handleChangeUserForm(e, "firstName")} 
-                                            type="text" 
-                                            className="form-control" 
-                                            id="firstName" 
+                                        <input
+                                            value={firstName}
+                                            onChange={(e) => this.handleChangeUserForm(e, "firstName")}
+                                            type="text"
+                                            className="form-control"
+                                            id="firstName"
                                             name="firstName" />
                                     </div>
                                     <div className="col">
                                         <label htmlFor='lastName'>
                                             <FormattedMessage id="manage-user.lastname" />
                                         </label>
-                                        <input 
-                                            value={lastName} 
-                                            onChange={(e) => this.handleChangeUserForm(e, "lastName")} 
-                                            type="text" 
-                                            className="form-control" 
+                                        <input
+                                            value={lastName}
+                                            onChange={(e) => this.handleChangeUserForm(e, "lastName")}
+                                            type="text"
+                                            className="form-control"
                                             id="lastName"
                                             name="lastName" />
                                     </div>
@@ -274,24 +296,24 @@ class UserRedux extends Component {
                                         <label htmlFor='address'>
                                             <FormattedMessage id="manage-user.address" />
                                         </label>
-                                        <input 
-                                            value={address} 
-                                            onChange={(e) => this.handleChangeUserForm(e, "address")} 
-                                            type="text" 
-                                            className="form-control" 
-                                            id="address" 
+                                        <input
+                                            value={address}
+                                            onChange={(e) => this.handleChangeUserForm(e, "address")}
+                                            type="text"
+                                            className="form-control"
+                                            id="address"
                                             name="address" />
                                     </div>
                                     <div className="col col-4">
                                         <label htmlFor="phoneNumber">
                                             <FormattedMessage id="manage-user.phoneNumber" />
                                         </label>
-                                        <input 
-                                            value={phoneNumber} 
-                                            onChange={(e) => this.handleChangeUserForm(e, "phoneNumber")} 
-                                            type="text" 
-                                            className="form-control" 
-                                            name="phoneNumber" 
+                                        <input
+                                            value={phoneNumber}
+                                            onChange={(e) => this.handleChangeUserForm(e, "phoneNumber")}
+                                            type="text"
+                                            className="form-control"
+                                            name="phoneNumber"
                                             id="phoneNumber" />
                                     </div>
                                 </div>
@@ -310,7 +332,7 @@ class UserRedux extends Component {
                                                 <i className='bx bxs-download'></i>
                                             </label>
                                             <div className='previewImg'>
-                                                <img src={previewImgUrl} alt='ảnh preview' />
+                                                <img src={avatar} alt='ảnh preview' />
                                             </div>
                                         </div>
                                     </div>
@@ -320,11 +342,11 @@ class UserRedux extends Component {
                                                 <label htmlFor="gender">
                                                     <FormattedMessage id="manage-user.sex" />
                                                 </label>
-                                                <select 
-                                                    value={gender} 
-                                                    onChange={(e) => this.handleChangeUserForm(e, "gender")} 
-                                                    name="gender" 
-                                                    id="gender" 
+                                                <select
+                                                    value={gender}
+                                                    onChange={(e) => this.handleChangeUserForm(e, "gender")}
+                                                    name="gender"
+                                                    id="gender"
                                                     className="form-control"
                                                 >
                                                     {
@@ -342,11 +364,11 @@ class UserRedux extends Component {
                                                 <label htmlFor="role">
                                                     <FormattedMessage id="manage-user.role" />
                                                 </label>
-                                                <select 
-                                                    value={role} 
-                                                    onChange={(e) => this.handleChangeUserForm(e, "role")} 
-                                                    name="roleId" 
-                                                    id="role" 
+                                                <select
+                                                    value={role}
+                                                    onChange={(e) => this.handleChangeUserForm(e, "role")}
+                                                    name="roleId"
+                                                    id="role"
                                                     className="form-control"
                                                 >
                                                     {
@@ -364,11 +386,11 @@ class UserRedux extends Component {
                                                 <label htmlFor="position">
                                                     <FormattedMessage id="manage-user.position" />
                                                 </label>
-                                                <select 
-                                                    value={position} 
-                                                    onChange={(e) => this.handleChangeUserForm(e, "position")} 
-                                                    name="positionId" 
-                                                    id="position" 
+                                                <select
+                                                    value={position}
+                                                    onChange={(e) => this.handleChangeUserForm(e, "position")}
+                                                    name="positionId"
+                                                    id="position"
                                                     className="form-control"
                                                 >
                                                     {
@@ -385,15 +407,15 @@ class UserRedux extends Component {
                                         </div>
                                         <div className='row'>
                                             <div className='col'>
-                                                <input 
+                                                <input
                                                     onClick={isEdit ? this.handleUpdateUser : this.handleCreateUser}
                                                     // onClick={this.handleCreateUser} 
-                                                    type="button" 
-                                                    className={isEdit ? 'form-btn btn-warning' : 'form-btn btn-primary'} 
-                                                    value={isEdit ? 
-                                                        lang === LANGUAGES.VI ? "Cập nhật" : "Update" : 
+                                                    type="button"
+                                                    className={isEdit ? 'form-btn btn-warning' : 'form-btn btn-primary'}
+                                                    value={isEdit ?
+                                                        lang === LANGUAGES.VI ? "Cập nhật" : "Update" :
                                                         lang === LANGUAGES.VI ? "Tạo" : "Create"
-                                                    } 
+                                                    }
                                                 />
                                             </div>
                                         </div>

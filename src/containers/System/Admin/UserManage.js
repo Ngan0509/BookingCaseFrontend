@@ -23,6 +23,15 @@ class UserManage extends Component {
         this.getAllUserFromReact()
     }
 
+    componentWillUnmount() {
+        this.setState({
+            arrUsers: [],
+            isOpenModal: false,
+            isOpenModalEdit: false,
+            userEdit: {}
+        })
+    }
+
     getAllUserFromReact = async () => {
         let resp = await userService.getAllUser("All")
         if (resp && resp.errCode === 0) {
@@ -127,6 +136,7 @@ class UserManage extends Component {
                         updateUser={this.updateUser}
                     />
                 }
+
                 <div className='title text-center'>
                     Manage users with Lê Ngân
                 </div>

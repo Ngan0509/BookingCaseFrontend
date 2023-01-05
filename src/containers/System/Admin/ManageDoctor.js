@@ -50,6 +50,33 @@ class ManageDoctor extends React.Component {
         }
     }
 
+    componentWillUnmount() {
+        this.setState({
+            //save table markdown
+            contentHTML: '',
+            contentMarkdown: '',
+            description: '',
+            selectedDoctor: '',
+            listDoctors: [],
+            hasOldData: false,
+
+            //save table doctor_infor
+            selectedPrice: '',
+            listPrices: [],
+            selectedPayment: '',
+            listPayments: [],
+            selectedProvince: '',
+            listProvinces: [],
+            selectedSpecialty: '',
+            listSpecialty: [],
+            selectedClinic: '',
+            listClinic: [],
+            addressClinic: '',
+            nameClinic: '',
+            note: ''
+        })
+    }
+
     componentDidMount() {
         this.props.fetchAllDoctorsStart()
         this.props.fetchPriceDoctorStart()

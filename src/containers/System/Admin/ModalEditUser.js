@@ -22,6 +22,7 @@ class ModalEditUser extends Component {
 
     componentDidMount() {
         let { userEditData } = this.props
+        console.log("edit", userEditData)
         if (userEditData && !_.isEmpty(userEditData)) {
             this.setState({
                 id: userEditData.id,
@@ -35,6 +36,19 @@ class ModalEditUser extends Component {
                 roleId: userEditData.roleId,
             })
         }
+    }
+
+    componentWillUnmount() {
+        this.setState({
+            email: '',
+            password: '',
+            firstName: '',
+            lastName: '',
+            address: '',
+            phoneNumber: '',
+            gender: 1,
+            roleId: 1,
+        })
     }
 
     toggle = () => {

@@ -2,6 +2,7 @@
     .select-days {
         display: inline-block;
         border-bottom: 1px solid #333;
+
         select {
             outline: none;
             border: none;
@@ -18,10 +19,11 @@
         text-transform: uppercase;
         margin: 12px 0;
         font-weight: 600;
-        
+
         span {
             font-size: 18px;
             margin-right: 4px;
+
             i {
                 position: relative;
                 top: 2px;
@@ -30,15 +32,14 @@
     }
 
     .select-times {
-        display: flex;
         .scheduleTimes {
-            width: 60%;
 
             .scheduleTimes_btn {
                 p {
                     font-style: italic;
                 }
             }
+
             .btn-times {
                 background-color: #fff8ae;
                 padding: 8px 15px;
@@ -67,10 +68,28 @@
                 }
             }
         }
+
         .addressInfoDoctor {
-            width: 40%;
             border-left: 1px solid #ccc;
         }
     }
 
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 767px) {
+    .detailDoctor_schedule-container {
+        .select-times {
+            .addressInfoDoctor {
+                margin-top: 30px;
+                border-left: none;
+
+                .addressInfoDoctor_container {
+                    padding-left: 0;
+                }
+            }
+
+        }
+
+    }
 }

@@ -5,7 +5,6 @@ import { LANGUAGES } from '../../../../utils';
 import './ScheduleDoctor.scss'
 import moment from 'moment';
 import { FormattedMessage } from 'react-intl';
-import localization from 'moment/locale/vi'
 import { withRouter } from 'react-router';
 import AddressInfoDoctor from './AddressInfoDoctor';
 import BookingModal from './Modal/BookingModal';
@@ -142,11 +141,11 @@ class ScheduleDoctor extends Component {
                         </select>
                     </div>
                     <h3 className='detailDoctor_schedule-title'>
-                        <span><i class='bx bxs-calendar'></i></span>
+                        <span><i className='bx bxs-calendar'></i></span>
                         <FormattedMessage id="section.patient.schedule" />
                     </h3>
-                    <div className='select-times'>
-                        <div className='scheduleTimes'>
+                    <div className='row select-times'>
+                        <div className='col-lg-7 col-md-6 col-12 scheduleTimes'>
                             <div className='scheduleTimes_btn'>
                                 {
 
@@ -171,12 +170,12 @@ class ScheduleDoctor extends Component {
                                 allTimes && allTimes.length > 0 &&
                                 <div className='note'>
                                     <FormattedMessage id="section.patient.select" />
-                                    <span><i class='bx bxs-hand-up'></i></span>
+                                    <span><i className='bx bxs-hand-up'></i></span>
                                     <FormattedMessage id="section.patient.book-fee" />
                                 </div>
                             }
                         </div>
-                        <div className='addressInfoDoctor'>
+                        <div className='col-lg-5 col-md-6 col-12 addressInfoDoctor'>
                             <AddressInfoDoctor
                                 doctorIdFromParent={doctorIdFromParent}
                             />

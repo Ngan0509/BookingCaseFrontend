@@ -10,6 +10,17 @@ html {
   font-size: $base-size - 2px;
   height: 100vh;
   overflow: hidden;
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 991px) {
+  .content-container {
+    .custom-scrollbar>div {
+      margin-right: 0px !important;
+      margin-bottom: 0px !important;
+    }
+  }
 }
 
 .btn {

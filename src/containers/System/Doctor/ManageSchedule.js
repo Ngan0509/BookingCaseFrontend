@@ -8,6 +8,7 @@ import Select from 'react-select';
 import DatePicker from '../../../components/Input/DatePicker';
 import { toast } from 'react-toastify';
 import _ from 'lodash';
+import * as userService from '../../../services/userService'
 import moment from 'moment';
 
 
@@ -23,16 +24,27 @@ class ManageSchedule extends Component {
         }
     }
 
-    componentDidMount() {
+    componentWillUnmount() {
+        this.setState({
+            selectedDoctor: '',
+            listDoctors: [],
+            hasOldData: false,
+            currentDate: '',
+            scheduleTimesArr: []
+        })
+    }
+
+    async componentDidMount() {
         this.props.fetchAllDoctorsStart()
         this.props.fetchScheduleTimeStart()
+        await userService.deleteDateOldService();
     }
 
     componentDidUpdate(prevProps) {
         if (prevProps.allDoctorsRedux !== this.props.allDoctorsRedux) {
             let dataSelect = this.buildInputData(this.props.allDoctorsRedux)
             this.setState({
-                listDoctors: dataSelect
+                listDoctors: dataSelect,
             })
         }
 
@@ -53,7 +65,7 @@ class ManageSchedule extends Component {
         if (prevProps.lang !== this.props.lang) {
             let dataSelect = this.buildInputData(this.props.allDoctorsRedux)
             this.setState({
-                listDoctors: dataSelect
+                listDoctors: dataSelect,
             })
         }
     }
@@ -77,14 +89,55 @@ class ManageSchedule extends Component {
     }
 
     handleChangeSelect = async (selectedDoctor) => {
+        let data = this.state.scheduleTimesArr.map(item => ({
+            ...item,
+            isSelected: false
+        }));
         this.setState({
-            selectedDoctor
-        }, () =>
-            console.log(`Option selected:`, this.state.selectedDoctor)
-        );
+            scheduleTimesArr: data,
+            selectedDoctor,
+            currentDate: ''
+        })
     };
 
-    handleChangeDate = (date) => {
+    handleGetSchedule = async (selectedDoctor, formatDate) => {
+        let resp = await userService.getScheduleByDateService(selectedDoctor.value, formatDate);
+        console.log("resp doctor", resp)
+        if (resp && resp.errCode === 0 && resp.data.length > 0) {
+            let data = this.state.scheduleTimesArr;
+            let arrTimeType = resp.data.map(item => item.timeType);
+            let arrNew = [];
+            arrTimeType.forEach(item => {
+                arrNew = data.map(x => {
+                    if (item === x.keyMap) x.isSelected = true;
+                    return x;
+                })
+            })
+            this.setState({
+                scheduleTimesArr: arrNew,
+                hasOldData: true
+            })
+        } else {
+            let data = this.state.scheduleTimesArr.map(item => ({
+                ...item,
+                isSelected: false
+            }));
+            this.setState({
+                scheduleTimesArr: data,
+                hasOldData: false
+            })
+        }
+
+    }
+
+    handleChangeDate = async (date) => {
+        let selectedDoctor = this.state.selectedDoctor;
+        if (selectedDoctor === '') {
+            alert("please choose doctor")
+            return
+        }
+        let formatDate = new Date(date[0]).getTime();
+        this.handleGetSchedule(selectedDoctor, formatDate)
         this.setState({
             currentDate: date[0]
         })
@@ -107,19 +160,19 @@ class ManageSchedule extends Component {
     }
 
     handleSaveSchedule = () => {
-        let { scheduleTimesArr, currentDate, selectedDoctor } = this.state
+        let { scheduleTimesArr, currentDate, selectedDoctor, hasOldData } = this.state
         if (!currentDate) {
             toast.error("Invalid date")
             return
         }
-        if (selectedDoctor && _.isEmpty(selectedDoctor)) {
+        if (selectedDoctor === "" || _.isEmpty(selectedDoctor)) {
             toast.error("Invalid select doctor")
             return
         }
 
         // let formatDate = moment(currentDate).format(dateFormat.SEND_TO_SERVER)
         let formatDate = new Date(currentDate).getTime()
-        let result
+        let result = [];
         if (scheduleTimesArr && scheduleTimesArr.length > 0) {
             let selectedTimes = scheduleTimesArr.filter(item => item.isSelected === true)
             if (selectedTimes && selectedTimes.length > 0) {
@@ -133,18 +186,32 @@ class ManageSchedule extends Component {
                 return
             }
         }
+        if (result.length === 0) {
+            alert("please choose time")
+            return
+        }
 
         this.props.saveScheduleDoctor({
+            hasOldData,
             arrSchedule: result,
             doctorId: selectedDoctor.value,
             date: formatDate
+        })
+        let data = this.state.scheduleTimesArr.map(item => ({
+            ...item,
+            isSelected: false
+        }));
+        this.setState({
+            scheduleTimesArr: data,
+            selectedDoctor: '',
+            hasOldData: false,
+            currentDate: moment(new Date().setHours(0, 0, 0, 0))._d,
         })
     }
 
     render() {
         const { lang } = this.props;
         const { selectedDoctor, listDoctors, hasOldData, currentDate, scheduleTimesArr } = this.state;
-        console.log(scheduleTimesArr)
         let today = new Date();
         let yesterday = new Date(today.setDate(today.getDate() - 1))
         return (

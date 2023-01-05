@@ -1,11 +1,13 @@
 .detailDoctor_container {
-        margin: 80px 0 0;
+    margin: 80px 0 0;
+
     .detailDoctor_intro {
         padding: 30px 0;
         display: flex;
         max-width: 1000px;
-        width: 100%;
+        width: 90%;
         margin: 0 auto;
+
         .detailDoctor_image {
             width: 120px;
             height: 120px;
@@ -19,13 +21,16 @@
                 object-position: center;
             }
         }
+
         .detailDoctor_body {
-            flex: 0.7;
+            flex: 1;
             margin-left: 20px;
+
             .detailDoctor_title {
                 font-size: 25px;
                 font-weight: 600;
             }
+
             .detailDoctor_desc {
                 font-size: 13px;
                 margin-top: 10px;
@@ -33,22 +38,24 @@
                 color: #666;
                 padding-right: 150px;
             }
-    
+
         }
     }
+
     .detailDoctor_schedule {
         max-width: 1000px;
-        width: 100%;
+        width: 90%;
         margin: 0 auto;
         padding: 30px 0;
     }
 
     .detailDoctor_bg {
-            background-color: #f9f9f9;
-            border-top: 1px solid #ccc;
+        background-color: #f9f9f9;
+        border-top: 1px solid #ccc;
+
         .detailDoctor_info {
             max-width: 1000px;
-            width: 100%;
+            width: 90%;
             margin: 0 auto;
             padding: 30px 0;
 
@@ -61,12 +68,51 @@
                 strong {
                     color: #333;
                 }
+
                 font-size: 13px;
                 color: #666;
             }
         }
     }
-    .detailDoctor_comment {
 
+    .detailDoctor_comment {}
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .detailDoctor_container {
+        margin-top: 0;
+
+        .detailDoctor_intro {
+            .detailDoctor_body {
+                .detailDoctor_desc {
+                    padding-right: 0;
+                }
+            }
+        }
     }
 }
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 767px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 600px) and (max-width: 991px) {
+    .detailDoctor_container {
+        margin-top: 0;
+
+        .detailDoctor_intro {
+            .detailDoctor_body {
+                .detailDoctor_desc {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

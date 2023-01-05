@@ -158,3 +158,81 @@
         }
     }
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #HomeFooter {
+        .footer_container {
+            .footer_content {
+                text-align: center;
+
+                .footer-row {
+                    display: initial;
+                    margin-left: 0;
+                    margin-right: 0;
+
+                    .footer-col {
+                        padding-left: 0;
+                        padding-right: 0;
+                        max-width: 100%;
+                    }
+                }
+            }
+
+            .footer_app-download {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+        }
+
+        .copyright_container-bg {
+            .copyright_container {
+                padding: 20px;
+            }
+        }
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 767px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 600px) and (max-width: 991px) {
+    #HomeFooter {
+        .footer_container {
+            .footer_content {
+                text-align: center;
+
+                .footer-row.main {
+                    display: initial;
+                    margin-left: 0;
+                    margin-right: 0;
+
+                    .footer-col {
+                        padding-left: 0;
+                        padding-right: 0;
+                        max-width: 100%;
+                        margin-bottom: 16px;
+                    }
+                }
+            }
+
+            .footer_app-download {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+        }
+
+        .copyright_container-bg {
+            .copyright_container {
+                padding: 20px;
+            }
+        }
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

@@ -109,3 +109,38 @@
     }
 
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .detailSpecialty_container {
+        margin-top: 0;
+
+        .detailSpecialty_doctorInfor-list-bg {
+            .detailSpecialty_doctorInfor-item {
+                .ProfileDoctor {
+                    margin-bottom: 16px;
+                    border-bottom: 1px solid #ddd;
+                    padding-bottom: 16px;
+                }
+
+            }
+        }
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 767px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 600px) and (max-width: 991px) {
+    .detailSpecialty_container {
+        margin-top: 0;
+
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

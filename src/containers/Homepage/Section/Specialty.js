@@ -47,45 +47,47 @@ class Specialty extends Component {
                 <div className='section_container'>
                     <div className='section_header'>
                         <h3><FormattedMessage id="section.popular-specialties" /></h3>
-                        <a href='' className='btn-more'><FormattedMessage id="section.see-more" /></a>
+                        <a href='/' className='btn-more'><FormattedMessage id="section.see-more" /></a>
                     </div>
                     <div className='section_content'>
                         <ul className='section_list'>
-                            <Slider {...settings}>
-                                {
-                                    topSpecialtyArr && topSpecialtyArr.length > 0 &&
-                                    topSpecialtyArr.map(item => {
-                                        let imageBase64 = ''
-                                        if (item.image) {
-                                            imageBase64 = new Buffer(item.image, 'base64').toString('binary')
-                                        }
+                            {
+                                topSpecialtyArr.length && <Slider {...settings}>
+                                    {
+                                        topSpecialtyArr && topSpecialtyArr.length > 0 &&
+                                        topSpecialtyArr.map(item => {
+                                            let imageBase64 = ''
+                                            if (item.image) {
+                                                imageBase64 = new Buffer(item.image, 'base64').toString('binary')
+                                            }
 
-                                        let nameVi = `${item.nameVi}`
-                                        let nameEn = `${item.nameEn}`
+                                            let nameVi = `${item.nameVi}`
+                                            let nameEn = `${item.nameEn}`
 
-                                        return (
-                                            <li
-                                                key={item.id}
-                                                onClick={(e) => this.handleGetDetailSpecialty(item, e)}
-                                                className='section_list-item'
-                                            >
-                                                <a href="" className='section_wrap'>
-                                                    <div className='section_image'>
-                                                        <img alt='' src={imageBase64} />
-                                                    </div>
-                                                    <p className='section_title'>
-                                                        {
-                                                            lang === LANGUAGES.VI ? nameVi : nameEn
-                                                        }
-                                                    </p>
+                                            return (
+                                                <li
+                                                    key={item.id}
+                                                    onClick={(e) => this.handleGetDetailSpecialty(item, e)}
+                                                    className='section_list-item'
+                                                >
+                                                    <a href="/" className='section_wrap'>
+                                                        <div className='section_image'>
+                                                            <img alt='' src={imageBase64} />
+                                                        </div>
+                                                        <p className='section_title'>
+                                                            {
+                                                                lang === LANGUAGES.VI ? nameVi : nameEn
+                                                            }
+                                                        </p>
 
-                                                </a>
-                                            </li>
-                                        )
-                                    })
-                                }
+                                                    </a>
+                                                </li>
+                                            )
+                                        })
+                                    }
 
-                            </Slider>
+                                </Slider>
+                            }
                         </ul>
                     </div>
                 </div>

@@ -16,6 +16,13 @@ class RemedyModal extends Component {
         }
     }
 
+    componentWillUnmount() {
+        this.setState({
+            email: '',
+            imageBase64: ''
+        })
+    }
+
     componentDidMount() {
         if (this.props.dataPatientForRemedy) {
             let dataPatientForRemedy = this.props.dataPatientForRemedy

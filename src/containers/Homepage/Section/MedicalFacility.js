@@ -46,44 +46,46 @@ class MedicalFacility extends Component {
                 <div className='section_container'>
                     <div className='section_header'>
                         <h3><FormattedMessage id="section.medical-facility" /></h3>
-                        <a href='' className='btn-more'><FormattedMessage id="section.see-more" /></a>
+                        <a href='/' className='btn-more'><FormattedMessage id="section.see-more" /></a>
                     </div>
                     <div className='section_content'>
                         <ul className='section_list'>
-                            <Slider {...settings}>
-                                {
-                                    topClinicArr && topClinicArr.length > 0 &&
-                                    topClinicArr.map(item => {
-                                        let imageBase64 = ''
-                                        if (item.image) {
-                                            imageBase64 = new Buffer(item.image, 'base64').toString('binary')
-                                        }
+                            {
+                                topClinicArr.length && <Slider {...settings}>
+                                    {
+                                        topClinicArr && topClinicArr.length > 0 &&
+                                        topClinicArr.map(item => {
+                                            let imageBase64 = ''
+                                            if (item.image) {
+                                                imageBase64 = new Buffer(item.image, 'base64').toString('binary')
+                                            }
 
-                                        let nameVi = `${item.nameVi}`
-                                        let nameEn = `${item.nameEn}`
+                                            let nameVi = `${item.nameVi}`
+                                            let nameEn = `${item.nameEn}`
 
-                                        return (
-                                            <li
-                                                onClick={(e) => this.handleGetDetailClinic(item, e)}
+                                            return (
+                                                <li
+                                                    onClick={(e) => this.handleGetDetailClinic(item, e)}
 
-                                                key={item.id}
-                                                className='section_list-item'>
-                                                <a href="" className='section_wrap'>
-                                                    <div className='section_image'>
-                                                        <img alt='' src={imageBase64} />
-                                                    </div>
-                                                    <p className='section_title'>
-                                                        {
-                                                            lang === LANGUAGES.VI ? nameVi : nameEn
-                                                        }
-                                                    </p>
+                                                    key={item.id}
+                                                    className='section_list-item'>
+                                                    <a href="/" className='section_wrap'>
+                                                        <div className='section_image'>
+                                                            <img alt='' src={imageBase64} />
+                                                        </div>
+                                                        <p className='section_title'>
+                                                            {
+                                                                lang === LANGUAGES.VI ? nameVi : nameEn
+                                                            }
+                                                        </p>
 
-                                                </a>
-                                            </li>
-                                        )
-                                    })
-                                }
-                            </Slider>
+                                                    </a>
+                                                </li>
+                                            )
+                                        })
+                                    }
+                                </Slider>
+                            }
                         </ul>
                     </div>
                 </div>

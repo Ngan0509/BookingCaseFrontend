@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 // import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import { emitter } from '../../../utils/emitter';
 class ModalUser extends Component {
 
     constructor(props) {
@@ -17,25 +16,38 @@ class ModalUser extends Component {
             gender: 1,
             roleId: 1,
         }
-        this.listenToEmitter()
+        // this.listenToEmitter()
     }
 
-    listenToEmitter() {
-        emitter.on('EVENT_CLEAR_MODAL_DATA', () => {
-            this.setState({
-                email: '',
-                password: '',
-                firstName: '',
-                lastName: '',
-                address: '',
-                phoneNumber: '',
-                gender: 1,
-                roleId: 1,
-            })
-        })
-    }
+    // listenToEmitter() {
+    //     emitter.on('EVENT_CLEAR_MODAL_DATA', () => {
+    //         this.setState({
+    //             email: '',
+    //             password: '',
+    //             firstName: '',
+    //             lastName: '',
+    //             address: '',
+    //             phoneNumber: '',
+    //             gender: 1,
+    //             roleId: 1,
+    //         })
+    //     })
+    // }
 
     componentDidMount() {
+    }
+
+    componentWillUnmount() {
+        this.setState({
+            email: '',
+            password: '',
+            firstName: '',
+            lastName: '',
+            address: '',
+            phoneNumber: '',
+            gender: 1,
+            roleId: 1,
+        })
     }
 
     toggle = () => {
@@ -69,16 +81,6 @@ class ModalUser extends Component {
         if (isValid) {
             this.props.createNewUser(this.state)
         }
-        // this.setState({
-        //     email: '',
-        //     password: '',
-        //     firstName: '',
-        //     lastName: '',
-        //     address: '',
-        //     phoneNumber: '',
-        //     gender: 1,
-        //     roleId: 1,
-        // })
     }
 
     render() {

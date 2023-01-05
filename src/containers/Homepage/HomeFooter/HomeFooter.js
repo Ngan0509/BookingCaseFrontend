@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import "./HomeFooter.scss"
-import * as actions from "../../../store/actions";
 import { FormattedMessage } from 'react-intl';
 import bocongthuong from '../../../assets/HompageImages/bocongthuong.svg'
 import facebook from '../../../assets/HompageImages/facebooksquare.svg'
@@ -22,11 +21,10 @@ class HomeFooter extends Component {
             <div id='HomeFooter'>
                 <div className='footer_container'>
                     <div className='footer_content'>
-                        <div className='footer-row'>
+                        <div className='footer-row main'>
                             <div className='footer-col'>
                                 <div className='footer_info'>
-                                    <div className='logo'>
-                                        <a href='' className='logo_image'></a>
+                                    <div className='logo_image'>
                                     </div>
                                     <div className='address'>
                                         <h5><FormattedMessage id="home-footer.ft-company-name" /></h5>
@@ -40,10 +38,10 @@ class HomeFooter extends Component {
                                         </p>
                                     </div>
                                     <div className='label'>
-                                        <a href='' className='label_image'>
+                                        <a href='/' className='label_image'>
                                             <img src={bocongthuong} alt='' />
                                         </a>
-                                        <a href='' className='label_image'>
+                                        <a href='/' className='label_image'>
                                             <img src={bocongthuong} alt='' />
                                         </a>
                                     </div>
@@ -51,15 +49,15 @@ class HomeFooter extends Component {
                             </div>
 
                             <div className='footer-col'>
-                                <div className='footer-row'>
+                                <div className='footer-row child'>
                                     <div className='footer-col'>
                                         <div className='footer_list'>
-                                            <a href=''><FormattedMessage id="home-footer.ft-list1" /></a>
-                                            <a href=''><FormattedMessage id="home-footer.ft-list2" /></a>
-                                            <a href=''><FormattedMessage id="home-footer.ft-list3" /></a>
-                                            <a href=''><FormattedMessage id="home-footer.ft-list4" /></a>
-                                            <a href=''><FormattedMessage id="home-footer.ft-list5" /></a>
-                                            <a href=''><FormattedMessage id="home-footer.ft-list6" /></a>
+                                            <a href='/'><FormattedMessage id="home-footer.ft-list1" /></a>
+                                            <a href='/'><FormattedMessage id="home-footer.ft-list2" /></a>
+                                            <a href='/'><FormattedMessage id="home-footer.ft-list3" /></a>
+                                            <a href='/'><FormattedMessage id="home-footer.ft-list4" /></a>
+                                            <a href='/'><FormattedMessage id="home-footer.ft-list5" /></a>
+                                            <a href='/'><FormattedMessage id="home-footer.ft-list6" /></a>
                                         </div>
                                     </div>
                                     <div className='footer-col'>
@@ -91,9 +89,9 @@ class HomeFooter extends Component {
                         <span className='icon'><i className='bx bx-microchip'></i></span>
                         <span className='text'><FormattedMessage id="home-footer.ft-app-download" /></span>
                         <span className='link'>
-                            <a href=''>Android - </a>
-                            <a href=''>iPhone/iPad - </a>
-                            <a href=''>Khác</a>
+                            <a href='/'>Android - </a>
+                            <a href='/'>iPhone/iPad - </a>
+                            <a href='/'>Khác</a>
                         </span>
                     </div>
                 </div>
@@ -104,10 +102,10 @@ class HomeFooter extends Component {
                             <p>© 2022 BookingCare.</p>
                         </div>
                         <div className='socials'>
-                            <a href=''>
+                            <a href='/'>
                                 <img src={facebook} alt='' />
                             </a>
-                            <a href=''>
+                            <a href='/'>
                                 <img src={youtube} alt='' />
 
                             </a>

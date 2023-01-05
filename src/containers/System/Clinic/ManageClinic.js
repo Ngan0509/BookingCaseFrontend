@@ -36,6 +36,20 @@ class ManageClinic extends Component {
         }
     }
 
+    componentWillUnmount() {
+        this.setState({
+            descriptionHTML: '',
+            descriptionMarkdown: '',
+            nameVi: '',
+            nameEn: '',
+            address: '',
+            selectedClinic: '',
+            listClinic: [],
+            imageBase64: '',
+            hasOldData: false
+        })
+    }
+
     async componentDidMount() {
         this.props.fetchAllClinicStart()
     }

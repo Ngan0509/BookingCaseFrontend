@@ -17,7 +17,7 @@
         .header_container {
             height: 80px;
             padding: 16px 0;
-            width: 100%;
+            width: 90%;
             max-width: 1170px;
             margin: 0 auto;
             display: flex;
@@ -35,6 +35,7 @@
             }
 
             .header_logo {
+                margin-left: 16px;
 
                 .header_logo-img {
                     background: url(../../../assets/HompageImages/logoHomepage.svg) center center no-repeat;
@@ -123,7 +124,6 @@
     .banner_container {
         background: url(../../../assets/HompageImages/bookingcareHomeBg4.jpg) center center no-repeat;
         background-size: cover;
-        height: 560px;
         margin-top: 80px;
 
         .banner_container-bg {
@@ -157,8 +157,8 @@
                 .banner_input-wrap {
                     .banner_input-search {
                         background-color: #f7d800;
-                        min-width: 300px;
-                        max-width: 40%;
+                        max-width: 300px;
+                        width: 100%;
                         margin: 0 auto;
                         padding: 10px 16px;
                         border-radius: 25px;
@@ -227,7 +227,8 @@
                         padding-left: 0;
 
                         .banner_list-item {
-                            // width: 8.3333%;
+                            width: 8.3333%;
+                            max-width: 130px;
 
                             a {
                                 text-align: center;
@@ -265,3 +266,102 @@
         }
     }
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #HomeHeader {
+        .header_fixed {
+            position: initial;
+
+            .header_container {
+                justify-content: initial;
+                width: 95%;
+
+                .header_logo {
+                    flex: 1;
+                    margin-left: 8px;
+                }
+
+                .header_navbar {
+                    display: none;
+                }
+
+                .header_support {
+                    display: none;
+                }
+            }
+        }
+
+        .banner_container {
+            margin-top: 0;
+
+            .banner_container-bg {
+                .banner_service-bg {
+                    .banner_service {
+                        .banner_list {
+                            flex-wrap: wrap;
+
+                            .banner_list-item {
+                                width: 50%;
+                                max-width: 130px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 767px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 600px) and (max-width: 991px) {
+    #HomeHeader {
+        .header_fixed {
+            position: initial;
+
+            .header_container {
+                justify-content: initial;
+
+                .header_logo {
+                    flex: 1;
+                }
+
+                .header_navbar {
+                    display: none;
+                }
+
+                .header_support {
+                    margin-right: 16px;
+                }
+            }
+        }
+
+        .banner_container {
+            margin-top: 0;
+
+            .banner_container-bg {
+                .banner_service-bg {
+                    .banner_service {
+                        .banner_list {
+                            flex-wrap: wrap;
+
+                            .banner_list-item {
+                                width: 25%;
+                                max-width: 130px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

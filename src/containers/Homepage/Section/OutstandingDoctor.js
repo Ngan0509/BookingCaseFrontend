@@ -44,39 +44,41 @@ class OutstandingDoctor extends Component {
                 <div className='section_container'>
                     <div className='section_header'>
                         <h3><FormattedMessage id="section.outstanding-doctor" /></h3>
-                        <a href='' className='btn-more'><FormattedMessage id="section.see-more" /></a>
+                        <a href='/' className='btn-more'><FormattedMessage id="section.see-more" /></a>
                     </div>
                     <div className='section_content'>
                         <ul className='section_list'>
-                            <Slider {...settings}>
-                                {
-                                    topDoctorsArr && topDoctorsArr.length > 0 &&
-                                    topDoctorsArr.map((item) => {
-                                        let imageBase64 = ''
-                                        if (item.image) {
-                                            imageBase64 = new Buffer(item.image, 'base64').toString('binary')
-                                        }
+                            {
+                                topDoctorsArr.length && <Slider {...settings}>
+                                    {
+                                        topDoctorsArr && topDoctorsArr.length > 0 &&
+                                        topDoctorsArr.map((item) => {
+                                            let imageBase64 = ''
+                                            if (item.image) {
+                                                imageBase64 = new Buffer(item.image, 'base64').toString('binary')
+                                            }
 
-                                        let nameVi = `${item.positionData.valueVi} II ${item.lastName} ${item.firstName}`
-                                        let nameEn = `${item.positionData.valueEn} II ${item.firstName} ${item.lastName}`
-                                        return (
-                                            <li
-                                                className='section_list-item'
-                                                key={item.id}
-                                                onClick={(e) => this.handleGetDetailDoctor(item, e)}
-                                            >
-                                                <a href="/detail-doctor/:id" className='section_wrap outstandingdoctor'>
-                                                    <div className='section_image'>
-                                                        <img alt='' src={imageBase64} />
-                                                    </div>
-                                                    <p className='section_title'>{lang === LANGUAGES.VI ? nameVi : nameEn}</p>
-                                                    <p className='section_desc'>Sức khỏe tâm thần</p>
-                                                </a>
-                                            </li>
-                                        )
-                                    })
-                                }
-                            </Slider>
+                                            let nameVi = `${item.positionData.valueVi} II ${item.lastName} ${item.firstName}`
+                                            let nameEn = `${item.positionData.valueEn} II ${item.firstName} ${item.lastName}`
+                                            return (
+                                                <li
+                                                    className='section_list-item'
+                                                    key={item.id}
+                                                    onClick={(e) => this.handleGetDetailDoctor(item, e)}
+                                                >
+                                                    <a href="/detail-doctor/:id" className='section_wrap outstandingdoctor'>
+                                                        <div className='section_image'>
+                                                            <img alt='' src={imageBase64} />
+                                                        </div>
+                                                        <p className='section_title'>{lang === LANGUAGES.VI ? nameVi : nameEn}</p>
+                                                        <p className='section_desc'>Sức khỏe tâm thần</p>
+                                                    </a>
+                                                </li>
+                                            )
+                                        })
+                                    }
+                                </Slider>
+                            }
                         </ul>
                     </div>
                 </div>

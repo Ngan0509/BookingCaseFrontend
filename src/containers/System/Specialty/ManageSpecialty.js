@@ -35,6 +35,19 @@ class ManageSpecialty extends Component {
         }
     }
 
+    componentWillUnmount() {
+        this.setState({
+            descriptionHTML: '',
+            descriptionMarkdown: '',
+            nameVi: '',
+            nameEn: '',
+            selectedSpecialty: '',
+            listSpecialty: [],
+            imageBase64: '',
+            hasOldData: false
+        })
+    }
+
     async componentDidMount() {
         this.props.fetchAllSpecialtyStart()
     }

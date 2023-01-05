@@ -20,7 +20,7 @@ class HomeHeader extends Component {
     }
 
     returnToHome = () => {
-        if(this.props.history) {
+        if (this.props.history) {
             this.props.history.push(`/home`)
         }
     }
@@ -37,38 +37,38 @@ class HomeHeader extends Component {
                             </span>
                         </div>
                         <div className='header_logo'>
-                            <a href='' onClick={this.returnToHome}>
+                            <a href='/' onClick={this.returnToHome}>
                                 <div className='header_logo-img'></div>
                             </a>
                         </div>
                         <div className='header_navbar'>
                             <div className='header_navbar-item'>
-                                <a href=''>
+                                <a href='/'>
                                     <h5><FormattedMessage id="home-header.speciality" /></h5>
                                     <p><FormattedMessage id="home-header.search-doctor" /></p>
                                 </a>
                             </div>
                             <div className='header_navbar-item'>
-                                <a href=''>
+                                <a href='/'>
                                     <h5><FormattedMessage id="home-header.health-facility" /></h5>
                                     <p><FormattedMessage id="home-header.select-room-hospital" /></p>
                                 </a>
                             </div>
                             <div className='header_navbar-item'>
-                                <a href=''>
+                                <a href='/'>
                                     <h5><FormattedMessage id="home-header.doctor" /></h5>
                                     <p><FormattedMessage id="home-header.select-doctor" /></p>
                                 </a>
                             </div>
                             <div className='header_navbar-item'>
-                                <a href=''>
+                                <a href='/'>
                                     <h5><FormattedMessage id="home-header.examination-package" /></h5>
                                     <p><FormattedMessage id="home-header.general-health-examination" /></p>
                                 </a>
                             </div>
                         </div>
                         <div className='header_support'>
-                            <a href=''>
+                            <a href='/'>
                                 <span className='icon-question'>
                                     <i className='bx bx-question-mark'></i>
                                 </span>
@@ -100,26 +100,26 @@ class HomeHeader extends Component {
                                     </div>
                                     <div style={{ display: 'none' }} className='banner_input-search-result'>
                                         <h4>Chuyên Khoa</h4>
-                                        <a href=''><h5>Cơ Xương Khớp</h5></a>
-                                        <a href=''><h5>Thần kinh</h5></a>
-                                        <a href=''><h5>Tiêu hóa</h5></a>
-                                        <a href=''><h5>Tim mạch</h5></a>
-                                        <a href=''><h5>Tai Mũi Họng</h5></a>
-                                        <a href=''><h5>Cột sống</h5></a>
-                                        <a href=''><h5>Y học Cổ truyền</h5></a>
-                                        <a href=''><h5>Châm cứu</h5></a>
-                                        <a href=''><h5>Sản Phụ khoa</h5></a>
-                                        <a href=''><h5>Siêu âm thai</h5></a>
-                                        <a href=''><h5>Nhi khoa</h5></a>
-                                        <a href=''><h5>Da liễu</h5></a>
+                                        <a href='/'><h5>Cơ Xương Khớp</h5></a>
+                                        <a href='/'><h5>Thần kinh</h5></a>
+                                        <a href='/'><h5>Tiêu hóa</h5></a>
+                                        <a href='/'><h5>Tim mạch</h5></a>
+                                        <a href='/'><h5>Tai Mũi Họng</h5></a>
+                                        <a href='/'><h5>Cột sống</h5></a>
+                                        <a href='/'><h5>Y học Cổ truyền</h5></a>
+                                        <a href='/'><h5>Châm cứu</h5></a>
+                                        <a href='/'><h5>Sản Phụ khoa</h5></a>
+                                        <a href='/'><h5>Siêu âm thai</h5></a>
+                                        <a href='/'><h5>Nhi khoa</h5></a>
+                                        <a href='/'><h5>Da liễu</h5></a>
 
                                     </div>
                                 </div>
 
                                 <div className='banner_app-download'>
-                                    <a href="" className='googlePlay'>
+                                    <a href="/" className='googlePlay'>
                                     </a>
-                                    <a href="" className='appStore'>
+                                    <a href="/" className='appStore'>
                                     </a>
                                 </div>
                             </div>
@@ -128,9 +128,9 @@ class HomeHeader extends Component {
                                 <div className='banner_service'>
                                     <ul className='banner_list'>
                                         <li className='banner_list-item'>
-                                            <a href="">
+                                            <a href="/">
                                                 <div className='icon_service'>
-                                                    <img src='https://cdn.bookingcare.vn/fo/2021/12/08/133537-khamchuyenkhoa.png' />
+                                                    <img src='https://cdn.bookingcare.vn/fo/2021/12/08/133537-khamchuyenkhoa.png' alt='' />
                                                 </div>
                                                 <h4 className='title_service'>
                                                     <FormattedMessage id="home-header.specialist-examination" />
@@ -139,9 +139,9 @@ class HomeHeader extends Component {
                                         </li>
 
                                         <li className='banner_list-item'>
-                                            <a href="">
+                                            <a href="/">
                                                 <div className='icon_service'>
-                                                    <img width={'30px'} height={'30px'} src='https://cdn.bookingcare.vn/fo/2021/12/08/133657-khamtuxa.png' />
+                                                    <img width={'30px'} height={'30px'} src='https://cdn.bookingcare.vn/fo/2021/12/08/133657-khamtuxa.png' alt='' />
                                                 </div>
                                                 <h4 className='title_service'>
                                                     <FormattedMessage id="home-header.remote-examination" />
@@ -150,9 +150,9 @@ class HomeHeader extends Component {
                                         </li>
 
                                         <li className='banner_list-item'>
-                                            <a href="">
+                                            <a href="/">
                                                 <div className='icon_service'>
-                                                    <img width={'30px'} height={'30px'} src='https://cdn.bookingcare.vn/fo/2021/12/08/133744-khamtongquat.png' />
+                                                    <img width={'30px'} height={'30px'} src='https://cdn.bookingcare.vn/fo/2021/12/08/133744-khamtongquat.png' alt='' />
                                                 </div>
                                                 <h4 className='title_service'>
                                                     <FormattedMessage id="home-header.general-examination" />
@@ -161,9 +161,9 @@ class HomeHeader extends Component {
                                         </li>
 
                                         <li className='banner_list-item'>
-                                            <a href="">
+                                            <a href="/">
                                                 <div className='icon_service'>
-                                                    <img width={'30px'} height={'30px'} src='https://cdn.bookingcare.vn/fo/2021/12/08/133744-dichvuxetnghiem.png' />
+                                                    <img width={'30px'} height={'30px'} src='https://cdn.bookingcare.vn/fo/2021/12/08/133744-dichvuxetnghiem.png' alt='' />
                                                 </div>
                                                 <h4 className='title_service'>
                                                     <FormattedMessage id="home-header.medical-test" />
@@ -172,9 +172,9 @@ class HomeHeader extends Component {
                                         </li>
 
                                         <li className='banner_list-item'>
-                                            <a href="">
+                                            <a href="/">
                                                 <div className='icon_service'>
-                                                    <img width={'30px'} height={'30px'} src='https://cdn.bookingcare.vn/fo/2021/12/08/133744-suckhoetinhthan.png' />
+                                                    <img width={'30px'} height={'30px'} src='https://cdn.bookingcare.vn/fo/2021/12/08/133744-suckhoetinhthan.png' alt='' />
                                                 </div>
                                                 <h4 className='title_service'>
                                                     <FormattedMessage id="home-header.mental-health" />
@@ -183,9 +183,9 @@ class HomeHeader extends Component {
                                         </li>
 
                                         <li className='banner_list-item'>
-                                            <a href="">
+                                            <a href="/">
                                                 <div className='icon_service'>
-                                                    <img width={'30px'} height={'30px'} src='https://cdn.bookingcare.vn/fo/2022/05/19/104635-khamnhakhoa.png' />
+                                                    <img width={'30px'} height={'30px'} src='https://cdn.bookingcare.vn/fo/2022/05/19/104635-khamnhakhoa.png' alt='' />
                                                 </div>
                                                 <h4 className='title_service'>
                                                     <FormattedMessage id="home-header.dental-examination" />
@@ -194,9 +194,9 @@ class HomeHeader extends Component {
                                         </li>
 
                                         <li className='banner_list-item'>
-                                            <a href="">
+                                            <a href="/">
                                                 <div className='icon_service'>
-                                                    <img width={'30px'} height={'30px'} src='https://cdn.bookingcare.vn/fo/2022/05/16/151930-phau-thuat.jpg' />
+                                                    <img width={'30px'} height={'30px'} src='https://cdn.bookingcare.vn/fo/2022/05/16/151930-phau-thuat.jpg' alt='' />
                                                 </div>
                                                 <h4 className='title_service'>
                                                     <FormattedMessage id="home-header.surgery-package" />
@@ -205,9 +205,9 @@ class HomeHeader extends Component {
                                         </li>
 
                                         <li className='banner_list-item'>
-                                            <a href="">
+                                            <a href="/">
                                                 <div className='icon_service'>
-                                                    <img width={'30px'} height={'30px'} src='https://cdn.bookingcare.vn/fo/2021/12/08/133744-khamtainha.png' />
+                                                    <img width={'30px'} height={'30px'} src='https://cdn.bookingcare.vn/fo/2021/12/08/133744-khamtainha.png' alt='' />
                                                 </div>
                                                 <h4 className='title_service'>
                                                     <FormattedMessage id="home-header.medical-products" />

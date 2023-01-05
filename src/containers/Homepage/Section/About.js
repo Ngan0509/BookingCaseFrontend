@@ -18,11 +18,11 @@ class About extends Component {
             <div id="About" className='section_about section'>
                 <div className='section_container'>
                     <div className='section_header'>
-                        <h3><FormattedMessage id="section.media-talk"/></h3>
+                        <h3><FormattedMessage id="section.media-talk" /></h3>
                     </div>
                     <div className='section_content about'>
                         <div className='about_video'>
-                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/147SkAVXEqM?list=PLncHg6Kn2JT6E38Z3kit9Hnif1xC_9VqI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/147SkAVXEqM?list=PLncHg6Kn2JT6E38Z3kit9Hnif1xC_9VqI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                         </div>
                         <div className='about_channel'>
                             <img src={duck} alt='vịt triết gia' />
