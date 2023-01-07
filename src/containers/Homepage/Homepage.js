@@ -49,7 +49,7 @@ class Homepage extends Component {
             this.setState({
                 isShowLoading: false
             })
-        }, 3000)
+        }, 1500)
     }
 
     componentWillUnmount() {

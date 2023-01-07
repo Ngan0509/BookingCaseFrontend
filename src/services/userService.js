@@ -98,7 +98,7 @@ const getAllClinicService = () => {
 }
 
 const getDetailInfoClinic = (inputId, location) => {
-    return axios.get(`/api/get-detail-clinic?clinicId=${inputId}}&location=${location}`)
+    return axios.get(`/api/get-detail-clinic?clinicId=${inputId}&location=${location}`)
 }
 
 const getListPatientForDoctor = (doctorId, date) => {
